@@ -1,0 +1,624 @@
+
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+
+* {-webkit-box-sizing: border-box; box-sizing:border-box;}
+html {overflow-x: hidden; -webkit-text-size-adjust: 100% }
+body {font-size: 62.5%; font-family: 'Montserrat', sans-serif; -webkit-font-smoothing: antialiased; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
+body, h1, h2, h3, h4, h5, h6, input, li, ol, p, ul {margin: 0; padding: 0; list-style: none;}
+a, a:hover.selected {text-decoration: none}
+a {-webkit-transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; -ms-transition: all 0.2s ease-in-out; -o-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out;}
+input, textarea, select {border: 0;}
+input:focus, textarea:focus, select:focus {outline: none;}
+html, body, section, article, .vMid  {width: 100%; height: 100%;}
+
+
+article {display: table; position: relative; z-index: 2}
+.midWrapper {display: table; margin: 0 auto; width: 90%; position: relative;}
+.vMid {display: table-cell; vertical-align: middle;}
+.right {float: right;}
+.clear {clear: both;}
+
+@font-face {font-family: 'SharpSansNo1Bold'; src: url('/fonts/SharpSansNo1Bold.eot'); 
+src: url('/fonts/SharpSansNo1Bold.eot') format('embedded-opentype'), 
+url('/fonts/SharpSansNo1Bold.woff2') format('woff2'), 
+url('/fonts/SharpSansNo1Bold.woff') format('woff'), 
+url('/fonts/SharpSansNo1Bold.ttf') format('truetype'), 
+url('/fonts/SharpSansNo1Bold.svg#SharpSansNo1Bold') format('svg');}
+
+@font-face {font-family: 'SharpSansNo1Semibold'; src: url('/fonts/SharpSansNo1Semibold.eot'); 
+src: url('/fonts/SharpSansNo1Semibold.eot') format('embedded-opentype'), 
+url('/fonts/SharpSansNo1Semibold.woff2') format('woff2'), 
+url('/fonts/SharpSansNo1Semibold.woff') format('woff'), 
+url('/fonts/SharpSansNo1Semibold.ttf') format('truetype'), 
+url('/fonts/SharpSansNo1Semibold.svg#SharpSansNo1Semibold') format('svg');}
+
+@font-face {font-family: 'SharpSansNo1Light'; src: url('/fonts/SharpSansNo1Light.eot'); src: url('/fonts/SharpSansNo1Light.eot') format('embedded-opentype'), url('/fonts/SharpSansNo1Light.woff2') format('woff2'), url('/fonts/SharpSansNo1Light.woff') format('woff'), url('/fonts/SharpSansNo1Light.ttf') format('truetype'), url('/fonts/SharpSansNo1Light.svg#SharpSansNo1Light') format('svg');}
+ 
+.hide{display: none!important;}
+.show{display: block !important;}
+#root, .App, .section {width: 100%; height: 100%; float: left;}
+.clear {clear: both;}
+
+a.logo {position: fixed; top:45px; left:45px; background:url(/images/images.png) no-repeat -10px -10px; width: 201px; height: 35px; z-index: 10;}
+.wrapper {position: relative; z-index: 9;}
+.wrapper .midWrapper {height: 100%; display: block;}
+.wrapper .leftSection {position: relative; z-index: 0;}
+.wrapper .leftSection .banner, .wrapper .leftSection .keyLock, .wrapper .leftSection .keyUnLock {float: left; width: 100%; position: relative; top: 50%; transform: translateY(-50%); -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); -o-transform: translateY(-50%);}
+.wrapper .leftSection .banner img {width: 100%;}
+
+.wrapper .leftSection .keyLock .box {width: 516px; height: 740px; border:2px solid #373737; position: relative; margin: 0 auto; display:table;}
+.wrapper .leftSection .keyLock .box .lock {position: absolute; top: -38px; right:-38px; width: 96px; height: 96px; background-color: #373737; border-radius: 100%;}
+.wrapper .leftSection .keyLock .box .lock:before {content: ""; position: absolute; top: 21px; left:30px; background:url(/images/images.png) no-repeat -385px -10px; width: 37px; height: 51px;}
+.wrapper .leftSection .keyLock .box .key {width: 360px; height: 525px; margin: 120px auto 0; display: table; position: relative; opacity: 0.5;}
+
+.wrapper .leftSection .keyUnLock .box {margin:0 auto; display: table; width: 400px; height: 580px; position: relative;}
+
+.key .numberBox {float: left; width: 100%; height: 145px; border:20px solid #373737; border-radius: 5px; position: relative;}
+.key .numberBox ul {float: left; width: 100%; height: 100%;}
+.key .numberBox ul li {float:left; width: 25%; position: relative; text-align: center; color: #373737; font-size: 7em; font-family: 'SharpSansNo1Bold'; line-height: 1.5em;}
+.key .numberBox ul li:before {content: ""; position: absolute; top: 10%; right: -1px; width: 2px; height: 80%; background-color: #373737;}
+.key .numberBox ul li:last-child:before {display: none;}
+.key .line {float: left; width: 26px; height: calc(100% - 145px); background-color: #373737; border-radius: 8px; position: absolute; left: 50%; top: 140px; margin-left: -13px;}
+.key .line .line1 {position: absolute; top: 75%; left:20px; width: 36px; height: 24px; background-color: #373737; border-radius: 8px;}
+.key .line .line2 {position: absolute; top: 85%; left:20px; width: 50px; height: 24px; background-color: #373737; border-radius: 8px;}
+
+.wrapper .leftSection, .wrapper .rightSection {float: left; width: 50%;  height: 100%;}
+
+.wrapper .rightSection .intro, .wrapper .rightSection .form, .wrapper .rightSection .thankYou {float: left; width: 50%; position: absolute; padding-left: 100px; top: 50%; transform: translateY(-50%); -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); -o-transform: translateY(-50%);}
+.wrapper .rightSection .intro .header {float: left; width: 100%; margin-bottom: 50px; font-family: 'SharpSansNo1Semibold'; color: #373737; line-height: 1.1em; font-size: 12.6em;}
+.wrapper .rightSection .intro .header span {position: relative;}
+.wrapper .rightSection .intro .header span:before {content: ""; position: absolute; top: 85px; left:31px; background:url(/images/images.png) no-repeat -235px -10px; width: 12px; height: 22px; display: none;}
+.wrapper .rightSection .intro .text1 {float: left; width: 90%; font-family: 'SharpSansNo1Light'; font-size: 3em; color: #373737; margin-bottom: 40px;}
+.wrapper .rightSection .intro .steps {float: left; width: 100%; margin-bottom: 50px;}
+.wrapper .rightSection .intro .steps ul li {float: left; padding-left: 45px; margin-bottom: 30px; color: #221e1f; font-size:2em; font-weight: 300; width: 100%; position: relative;}
+.wrapper .rightSection .intro .steps ul li:before {content: ""; position: absolute; top:-3px; left: 0; width: 28px; height: 28px; background-color: #373737; border-radius: 50px;}
+.wrapper .rightSection .intro .steps ul li:after {content: ""; position: absolute; top:23px; left: 14px; width: 1px; height: 120%; background-color: #373737;}
+.wrapper .rightSection .intro .steps ul li:last-child {margin-bottom: 0;}
+.wrapper .rightSection .intro .steps ul li:last-child:after {display: none;}
+.wrapper .rightSection .intro .steps ul li span {position: absolute; left: 0; top: 0; font-size: 0.7em; color: #ffffff; z-index: 2; width: 28px; height: 28px; text-align: center; padding-top: 3px;}
+
+a.button, .submitButton {font-size: 2.1em; color: #373737; font-family: 'SharpSansNo1Bold'; letter-spacing: 3px; text-transform: uppercase; border:2px solid #373737; padding: 20px 0; width: 250px; text-align: center; position: relative; border-radius: 50px; display: inline-block; background-color: transparent; cursor: pointer;}
+a:focus.button, .submitButton:focus, .wrapper .rightSection .form .formWrapper ul li .seletMenu:focus {outline: none;}
+
+.wrapper .rightSection .form .header {float: left; width: 100%; margin-bottom: 30px; font-family: 'SharpSansNo1Semibold'; color: #373737; line-height: 1.3em; font-size: 4.6em;}
+.wrapper .rightSection .form .text1 {float: left; width:80%; font-size: 2em; color: #221e1f; margin-bottom: 70px;  line-height: 2em;}
+.wrapper .rightSection .form .formWrapper {float: left; width: 100%;}
+.wrapper .rightSection .form .formWrapper ul li {float: left; width: 60%; margin-bottom: 70px; position: relative;}
+.wrapper .rightSection .form .formWrapper ul li .number {position: absolute; top: 10px; left:-40px; font-family: 'Montserrat', sans-serif; font-weight: 400; color: rgba(34,30,31,0.4); font-size: 1.9em;}
+.wrapper .rightSection .form .formWrapper ul li .inputFields {float: left; border:none; border-bottom: 1px solid #a0a0a0; padding:10px 0 20px 0; color: rgba(34,30,31,0.4); font-family: 'Montserrat', sans-serif; font-weight: 400; width:100%; font-size: 1.9em; -webkit-transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; -ms-transition: all 0.2s ease-in-out; -o-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out; background-color: transparent;}
+.wrapper .rightSection .form .formWrapper ul li .inputFields:focus {color: rgba(34,30,31,1);}
+.wrapper .rightSection .form .formWrapper ul li .inputFields::-webkit-input-placeholder {color: rgba(34,30,31,0.4);}
+.wrapper .rightSection .form .formWrapper ul li .inputFields::-moz-placeholder {color: rgba(34,30,31,0.4);}
+.wrapper .rightSection .form .formWrapper ul li .inputFields:-ms-input-placeholder {color: rgba(34,30,31,0.4);}
+.wrapper .rightSection .form .formWrapper ul li .inputFields:-moz-placeholder {color: rgba(34,30,31,0.4);}
+.wrapper .rightSection .form .formWrapper ul li .seletMenu {float: left; width: 100%; position: relative;}
+.wrapper .rightSection .form .formWrapper ul li .seletMenu select {float: left; border:none; border-bottom: 1px solid #a0a0a0; padding:10px 0 20px 0; color: rgba(34,30,31,0.4); font-family: 'Montserrat', sans-serif; font-weight: 400; width:100%; font-size: 1.9em; -webkit-appearance: none; -moz-appearance:none; appearance: none; background-color: #fff;}
+.wrapper .rightSection .form .formWrapper ul li .seletMenu:before {content:''; height:10px; width:10px; display:block; border:1px solid #a0a0a0; border-right-width:0; border-top-width:0; transform:rotate(-45deg);-webkit-transform:rotate(-45deg);-moz-transform:rotate(-45deg);-o-transform:rotate(-45deg);-ms-transform:rotate(-45deg); position:absolute; top:11px; right:7px; z-index:0;}
+.wrapper .rightSection .form .formWrapper ul li .correct {border-bottom-width: 3px !important;}
+.wrapper .rightSection .form .formWrapper ul li .wrong {border-bottom-width: 3px !important; border-bottom-color: red !important;}
+.wrapper .rightSection .form .formWrapper ul li .col3 {float: left; width: 30%;}
+.wrapper .rightSection .form .formWrapper ul li .col6 {float: right; width: 60%;}
+.wrapper .rightSection .form .formWrapper ul li .error {float: left; width: 100%; padding-top: 10px; color: red; font-size: 1.4em;}
+
+
+
+.wrapper .rightSection .thankYou .header {float: left; width: 100%; margin-bottom: 50px; font-family: 'SharpSansNo1Semibold'; color: #373737; line-height: 1em; font-size: 13.6em;}
+.wrapper .rightSection .thankYou .text1 {float: left; width:83%; font-size: 2.5em; color: #373737; line-height:1.7em; font-weight: 300;}
+.wrapper .rightSection .thankYou .text1 p {margin: 20px 0;}
+.wrapper .rightSection .thankYou .text1 span {font-weight: 700;}
+.wrapper .rightSection .thankYou .text1 a {color: #373737; font-weight: 700; border-bottom: 1px solid #373737}
+
+.address {position: fixed; bottom: 40px; left: 45px; z-index: 10; display: none;}
+.address ul li {float: left; position: relative; margin: 0 45px; font-weight: 300; font-size: 1.5em; color: #807f7f; padding:10px 0 10px 35px; letter-spacing: .5px;}
+.address ul li:first-child {margin-left: 0;}
+.address ul li:last-child {margin-right: 0;}
+.address ul li:before {content: ""; position: absolute; top: 10px; left: 0; background:url(/images/images.png) no-repeat 0 0;}
+.address ul li.location:before {background-position: -324px -10px; width: 19px; height: 24px;}
+.address ul li.phone:before {background-position: -351px -10px; width: 22px; height: 22px;}
+.address ul li:after {content: ""; position: absolute; top:6px; right:-45px; width: 1px; height: 30px; background-color: rgba(100,101,105,0.5)}
+.address ul li:last-child:after {display: none;}
+
+.share {position: fixed; bottom: 50px; right: 75px; z-index: 10; font-size: 1.2em; color: #313232; font-family: 'SharpSansNo1Semibold';}
+.share ul li {float: left; margin: 0 8px;}
+.share ul li:first-child {margin-left: 0; margin-right: 12px;}
+.share ul li:last-child {margin-right: 0; display: none;}
+.share ul li a.icons {background:url(/images/images.png) no-repeat 0 0; display: inline-block;}
+.share ul li a.facebook {background-position: -264px -10px; width: 7px; height: 13px;}
+.share ul li a.twitter {background-position: -281px -10px; width: 13px; height: 11px;}
+.share ul li a.whatsApp {background-position: -302px -10px; width: 13px; height: 13px;}
+
+.stepsIndication {position: fixed; top: 50%; right: 75px; transform: translateY(-50%); -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); -o-transform: translateY(-50%); z-index: 10; height: 250px; display: none;}
+.stepsIndication .line {float: left; width: 2px; height: 100%; background-color: #afafaf;}
+.stepsIndication ul {float: left; width: 100%; height: 100%; position: absolute; top: 0; left: -3px;}
+.stepsIndication ul li {position: absolute; left: 0; width: 8px; height: 8px; background-color: #fff; border:1px solid #414141; border-radius: 100%; -webkit-transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; -ms-transition: all 0.2s ease-in-out; -o-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out;}
+.stepsIndication ul li span {opacity: 0; visibility: hidden; -webkit-transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; -ms-transition: all 0.2s ease-in-out; -o-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out; font-size: 2.2em; color: #fff; text-align: center; width: 100%; float: left; padding-top: 10px; font-weight: 300;}
+.stepsIndication ul li:first-child {top: 0; }
+.stepsIndication ul li:nth-child(2) {top: 50%; }
+.stepsIndication ul li:last-child {top:100% }
+.stepsIndication ul li.active {width: 46px; height: 46px; background-color: #373737; border:none; transform: translate(-20px, -20px); -webkit-transform: translate(-20px, -20px); -moz-transform: translate(-20px, -20px); -o-transform: translate(-20px, -20px);}
+.stepsIndication ul li.active span {opacity: 1; visibility: visible;}
+
+.swiper-slide {opacity: 0 ;}
+.swiper-slide-active {opacity: 1;}
+
+
+.backgrounds {position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;}
+.backgrounds .start {width: 100%; height: 100%; position: absolute; top: 0; left: 0; background-color: #f8e4e6;}
+.backgrounds .form {width: 50%; height: 100%; position: absolute; top: 0; right: 0; background-color: #fff; z-index: 2; display: none;}
+.backgrounds .keyLock {width: 100%; height: 100%; position: absolute; top: 0; left: 0; background-color: #dae5f6; display: none;}
+.backgrounds .keyUnLock {width: 100%; height: 100%; position: absolute; top: 0; left: 0; background-color: #e5fbf3; display: none;}
+
+
+
+.tnc {position: fixed; bottom: 52px; right: calc(75px + 140px); z-index: 10; font-size: 1.2em; color: #313232; font-family: 'SharpSansNo1Semibold';}
+
+
+@media (max-width:1700px) {
+  .wrapper .leftSection .keyLock .box {width: 480px; height: 660px;}
+  .wrapper .leftSection .keyLock .box .key {margin: 80px auto 0;}
+  .wrapper .rightSection .intro .header, .wrapper .rightSection .thankYou .header {font-size: 10em;}
+  .wrapper .rightSection .intro .header span:before {transform: scale(0.9); -webkit-transform: scale(0.9); -moz-transform: scale(0.9); -o-transform: scale(0.9); top: 65px; left: 24px;}
+  .wrapper .rightSection .intro .text1 {width: 100%;}
+  .wrapper .rightSection .form .header {font-size: 4em;}
+  .wrapper .rightSection .form .text1, .wrapper .rightSection .form .formWrapper ul li {margin-bottom: 50px;}
+  .wrapper .rightSection .thankYou .text1 {font-size: 2em;}
+  .wrapper .leftSection .keyUnLock .box {width: 360px; height: 525px;}
+}
+
+
+@media (max-width:1500px) {
+  a.logo {top: 30px; left: 30px;}
+  .wrapper .rightSection .intro .header, .wrapper .rightSection .thankYou .header {font-size: 7em;}
+  .wrapper .rightSection .intro .header {margin-bottom: 30px;}
+  .wrapper .rightSection .intro .header span:before {transform: scale(0.6); -webkit-transform: scale(0.6); -moz-transform: scale(0.6); -o-transform: scale(0.6); top: 41px; left: 15px;}  
+  .wrapper .rightSection .intro .text1 {font-size: 2.5em;}
+  .wrapper .rightSection .intro .steps ul li {font-size: 1.8em; margin-bottom: 25px;}
+  a.button, .submitButton {font-size: 1.8em; padding: 17px 40px;}
+  .wrapper .rightSection .form .header {font-size: 3em; margin-bottom: 20px;}
+  .wrapper .rightSection .form .text1 {font-size: 1.8em; line-height: 1.7em; margin-bottom: 30px;}
+  .wrapper .rightSection .form .formWrapper ul li {width: 80%; margin-bottom: 30px;}
+  .wrapper .rightSection .form .formWrapper ul li .inputFields, .wrapper .rightSection .form .formWrapper ul li .seletMenu select {font-size: 1.7em; padding: 6px 0 12px 0;}
+  .wrapper .rightSection .form .formWrapper ul li .number {font-size: 1.7em; top: 6px; left: -35px;}
+  .wrapper .rightSection .form .formWrapper ul li .error {font-size: 1.3em;}
+  .wrapper .rightSection .thankYou .header {margin-bottom: 30px;}
+  .wrapper .rightSection .thankYou .text1 {font-size: 1.6em;}
+
+  .wrapper .leftSection .keyLock .box {width: 400px; height: 450px;}
+  .wrapper .leftSection .keyLock .box .key {width: 300px; height: 450px; margin: 20px auto ;}
+  .wrapper .leftSection .keyUnLock .box {width: 300px; height: 450px;}
+  .wrapper .leftSection .keyLock .box .lock {width: 70px; height: 70px;}
+  .wrapper .leftSection .keyLock .box .lock:before {transform: scale(0.7); -webkit-transform: scale(0.7); -moz-transform: scale(0.7); -o-transform: scale(0.7); top: 9px; left: 17px;}
+
+  .key .numberBox {border:15px solid #373737; height: 135px;}
+  .key .line {margin-left: -10px; width: 20px; height: calc(100% - 135px); top: 120px;}
+  .key .line .line1, .key .line .line2 {left: 13px; height: 20px;}
+  
+  
+  .stepsIndication {right:30px;}
+  .stepsIndication ul li.active {width: 38px; height: 38px; transform: translate(-15px, -15px); -webkit-transform: translate(-15px, -15px);
+    -moz-transform: translate(-15px, -15px); -o-transform: translate(-15px, -15px);}
+  .stepsIndication ul li span {font-size: 1.6em;}
+
+  .share {bottom: 30px;}
+  .address {bottom:20px;}
+  .address ul li {font-size: 1.4em; margin: 0 25px}
+  .address ul li:after {right: -25px;}
+  .address ul li.location:before {top:6px;}
+
+  .tnc {bottom: 32px;}
+}
+
+
+@media (max-width:1400px) {
+  .wrapper .rightSection .intro .header, .wrapper .rightSection .thankYou .header {font-size: 6em;}
+  .wrapper .rightSection .intro .header span:before {top: 34px; left: 12px;}  
+  .wrapper .rightSection .intro .text1 {font-size: 2.2em;}
+  a.button, .submitButton {font-size: 1.6em; padding: 17px 30px; width: 230px;}
+  .wrapper .rightSection .form .header {font-size: 2.8em;}
+  .wrapper .rightSection .form .text1 {font-size: 1.6em;}
+  .wrapper .rightSection .form .formWrapper ul li .inputFields, .wrapper .rightSection .form .formWrapper ul li .seletMenu select {font-size: 1.6em; padding: 5px 0 10px 0;}
+  .wrapper .rightSection .form .formWrapper ul li .number {font-size: 1.6em; top: 5px;}
+  .wrapper .rightSection .thankYou .header {margin-bottom: 20px;}
+
+  .stepsIndication ul li span {font-size: 1.4em;}
+
+  .share {right: 30px;}
+  .address {left: 30px;}
+
+  .tnc {right: calc(75px + 100px);}
+}
+
+@media (max-width:1100px) {
+  .wrapper .rightSection .intro, .wrapper .rightSection .form, .wrapper .rightSection .thankYou {padding-left: 50px;}
+}
+
+
+@media (max-width:800px) {
+  .headerSection {float: left; width: 100%; position:relative; z-index: 10; padding: 20px 5% 10px 5%;}
+  a.logo {left: 5%; position: static; float: left;}
+
+  .share {position: static; float: right; margin-top: 10px;}
+  .share ul li:last-child {display: block;}
+
+  .stepsIndication {top: auto; bottom: 25px; right: 5%; transform: translateY(0); -webkit-transform: translateY(0); -moz-transform: translateY(0); -o-transform: translateY(0); height: auto; margin-right: 4px;}
+    .stepsIndication .line {width: 110px; height: 1px;}
+    .stepsIndication ul li {margin-top: -4px;}
+    .stepsIndication ul li.active {width: 20px; height: 20px; transform: translate(-5px, -5px); -webkit-transform: translate(-5px, -5px);
+    -moz-transform: translate(-5px, -5px); -o-transform: translate(-5px, -5px);}
+    .stepsIndication ul li span {font-size: 1em; padding-top: 4px}
+    .stepsIndication ul li:nth-child(2) {top: 0; left: 50%;}
+    .stepsIndication ul li:nth-child(3) {top: 0; left: 100%;}
+
+  .wrapper .midWrapper {width: 100%;}
+  .backgrounds .form {display: none !important;}
+
+  .wrapper .leftSection .banner, .wrapper .rightSection .intro, .wrapper .rightSection .form, .wrapper .rightSection .thankYou {top: 0%; transform: translateY(0); -webkit-transform: translateY(0); -moz-transform: translateY(0); -o-transform: translateY(0);}
+
+
+  .wrapper .leftSection {position: absolute; bottom: 0; left: 20%; width: 80%; top: auto; height: auto;}
+  .wrapper .leftSection.mobileScreenLeft {position: static; width: 60%; margin: 0 auto; float: none; height: 40%;}
+  .wrapper .leftSection.mobileScreenLeft2 {position: relative; left: 0; width: 100%; height: 36%; padding:0 5%;}
+
+  .wrapper .leftSection .banner {top: -20px;}
+  
+    .wrapper .leftSection .keyLock .box, .wrapper .leftSection .keyUnLock .box {border:none; height: 135px; float: left; width: 100%;}
+    .wrapper .leftSection .keyLock .box .key {height: 135px; float: left; margin: 0; width: 100%;}
+    .wrapper .leftSection .keyLock .box .lock {width: 60px; height: 60px; right: auto; left: 35%; top: -30px;}
+    .wrapper .leftSection .keyLock .box .lock:before {transform: scale(0.6); -webkit-transform: scale(0.6); -moz-transform: scale(0.6);
+    -o-transform: scale(0.6); top: 4px; left: 12px;}
+    .key .line {width: 165px; height: 18px;}
+    .key .numberBox {width: 40%; border-width: 10px; height: 120px;}
+    .key .numberBox ul li {font-size: 6em; line-height: 1.65em;}
+    .key .line {left: 40%; width: calc(100% - 40%); top: 52px; margin-left: -5px}
+    .key .line .line1, .key .line .line2 {width: 18px; top: auto; bottom:10px;}
+    .key .line .line1 {height: 35px; left: 77%;}
+    .key .line .line2 {height: 45px; left: 85%;}
+
+
+  .wrapper .rightSection {width: 100%; height:60%}
+  .wrapper .rightSection.mobileScreenRight { background-color: #fff; padding: 20px 5% 0 5%;}
+  .wrapper .rightSection .intro {position:static; width: 100%; padding: 0 5%; margin-top: 30px;}
+
+  .wrapper .rightSection .form, .wrapper .rightSection .thankYou {position: static; padding: 0; width: 100%;}
+  .wrapper .rightSection .form .text1, .wrapper .rightSection .form .formWrapper ul li {width: 100%;}
+  .wrapper .rightSection .form .formWrapper ul li .number {left: -28px;}
+  .address ul li {margin: 0;}
+  .address ul li:after {display: none;}
+
+  .tnc {right:5%; bottom: 40px; font-size: 0.8em;}
+}
+
+
+@media (max-width:650px) {  
+  .key .numberBox ul li {font-size: 4em; line-height: 2.5em;}
+  .key .numberBox ul li:before {top: 20%; height: 60%;}
+}
+
+@media (max-width:500px) {
+  a.logo {transform: scale(0.7); -webkit-transform: scale(0.7); -moz-transform: scale(0.7); -o-transform: scale(0.7); transform-origin: left top;}
+  .share {margin-top: 5px;}
+  .share ul li {margin: 0 5px;}
+
+
+  .wrapper .leftSection.mobileScreenLeft {width:50%; height:30%;}
+  .wrapper .leftSection.mobileScreenLeft2 {height:22%;}
+  .wrapper .leftSection .keyLock .box, .wrapper .leftSection .keyUnLock .box, .wrapper .leftSection .keyLock .box .key, .key .numberBox {height: 95px;}
+  .key .numberBox ul li {font-size: 3em;}
+  .key .line {height: 15px;}
+  .key .line {top: 42px;}
+  .key .line .line1, .key .line .line2 {width: 15px;}
+  .key .line .line1 {left: 70%; height: 25px;}
+  .key .line .line2 {left: 80%; height: 35px;}  
+  .wrapper .leftSection .keyLock .box .lock {height: 45px; width: 45px;}
+  .wrapper .leftSection .keyLock .box .lock:before {transform: scale(0.4); -webkit-transform: scale(0.4); -moz-transform: scale(0.4); -o-transform: scale(0.4); top: -3px; left: 5px;}
+
+
+  .wrapper .rightSection.mobileScreenRight {height: 80%;}
+  .wrapper .rightSection .intro {margin-top: 0}
+  .wrapper .rightSection .intro .header, .wrapper .rightSection .thankYou .header {font-size: 4em;}
+  .wrapper .rightSection .intro .header {margin-bottom: 20px;}
+  .wrapper .rightSection .intro .header span:before {transform: scale(0.4); -webkit-transform: scale(0.4); -moz-transform: scale(0.4); -o-transform: scale(0.4); top: 16px; left: 6px; transform-origin: center top;}
+  .wrapper .rightSection .intro .text1 {font-size: 1.6em; margin-bottom:20px; line-height: 1.5em;}
+
+  .wrapper .rightSection .intro .steps {margin-bottom: 30px;}
+  .wrapper .rightSection .intro .steps ul li {font-size: 1.4em; margin-bottom: 16px; padding-left: 35px;}
+  .wrapper .rightSection .intro .steps ul li:before, .wrapper .rightSection .intro .steps ul li span {width: 22px; height: 22px;}
+  .wrapper .rightSection .intro .steps ul li span {padding-top: 3px;}
+  .wrapper .rightSection .intro .steps ul li:after {top: 11px; left: 11px;}
+
+  .wrapper .rightSection .form .header {font-size: 2em; margin-bottom:10px;}
+  .wrapper .rightSection .form .text1 {font-size: 1.4em; margin-bottom: 20px;}
+
+  .wrapper .rightSection .form .formWrapper ul li {margin-bottom: 20px;}
+  .wrapper .rightSection .form .formWrapper ul li .inputFields, .wrapper .rightSection .form .formWrapper ul li .seletMenu select, .wrapper .rightSection .form .formWrapper ul li .number {font-size: 1.4em;}
+  .wrapper .rightSection .form .formWrapper ul li .number {left: -21px;}
+
+  .wrapper .rightSection .form {padding: 0 10px}
+
+  .wrapper .rightSection .thankYou .header {margin-bottom: 10px;}
+  .wrapper .rightSection .thankYou .header br {display: none;}
+  .wrapper .rightSection .thankYou .text1 {width: 100%; font-size: 1.4em}
+  .wrapper .rightSection .thankYou .text1 p {margin:15px 0;}
+
+  .address {left: 5%; width: 90%;}
+  .address ul li {font-size: 1.3em; padding: 10px 0 5px 25px; margin: 0; line-height: 1.5em;}
+  .address ul li.location:before, .address ul li.phone:before {transform: scale(0.8); -webkit-transform: scale(0.8); -moz-transform: scale(0.8); -o-transform: scale(0.8);}
+  .address ul li.location:before {top: 9px;}
+
+
+  a.button, .submitButton {font-size: 1.4em; padding: 13px 0; letter-spacing:2px; width:170px;line-height: 1.3em;}
+
+  .wrapper .rightSection.thankYouScreen {background-color: transparent; padding-top: 0}
+
+}
+
+
+@media (max-width:380px) {
+  .wrapper .leftSection .banner {top: -10px;}
+
+  .wrapper .rightSection .intro .header {font-size: 3em; margin-bottom: 10px;}
+  .wrapper .rightSection .intro .header span:before {transform: scale(0.3); -webkit-transform: scale(0.3); -moz-transform: scale(0.3); -o-transform: scale(0.3); top: 9px; left: 3px;}
+
+  .wrapper .leftSection.mobileScreenLeft {width:40%; height:25%;}
+  .wrapper .leftSection.mobileScreenLeft2 {height:20%;}
+  .wrapper .rightSection.mobileScreenRight {height: 75%;}
+
+  .wrapper .leftSection .keyLock, .wrapper .leftSection .keyUnLock {top:60px;}
+  .wrapper .leftSection .keyLock .box, .wrapper .leftSection .keyUnLock .box, .wrapper .leftSection .keyLock .box .key, .key .numberBox {height: 70px;}
+  .key .numberBox {border-width: 6px;}
+  .key .numberBox ul li {font-size: 2em; line-height: 3em;}
+  .wrapper .leftSection .keyLock .box .lock {transform: scale(0.7); -webkit-transform: scale(0.7); -moz-transform: scale(0.7); -o-transform: scale(0.7); left: 32%; top: -25px;}
+  .key .line {height: 10px; top: 30px;}
+  .key .line .line1, .key .line .line2 {width: 10px; bottom: 2px;}
+  .key .line .line1 {height: 20px;}
+  .key .line .line2 {height: 30px;}
+
+  .wrapper .rightSection .form .header {font-size: 1.8em;}
+  .wrapper .rightSection .form .text1 {font-size: 1.3em;}
+  .wrapper .rightSection .form .formWrapper ul li .error {font-size: 1.1em; padding-top: 5px;}
+
+  .wrapper .rightSection .thankYou .header {font-size: 2em;}
+  .wrapper .rightSection .thankYou .text1 {font-size: 1.2em;}
+  .wrapper .rightSection .thankYou .text1 p {margin: 5px 0;}
+  .address ul li {font-size: 1em; padding: 10px 0 0px 25px}
+
+
+  a.button, .submitButton {font-size: 1.3em; padding: 10px 0;width: 150px;}
+
+}
+
+
+@media (max-width:360px) {
+  .share ul li:first-child {margin-right: 2px; margin-top: -1px;}
+
+  .wrapper .leftSection.mobileScreenLeft {width:35%; height:20%;}
+  .wrapper .leftSection.mobileScreenLeft2 {height:18%;}
+  .wrapper .rightSection.mobileScreenRight {height: 75%;}
+
+}
+
+@media (max-width:340px) {
+  a.logo {transform: scale(0.6); -webkit-transform: scale(0.6); -moz-transform: scale(0.6); -o-transform: scale(0.6); transform-origin: left top;}
+  .headerSection {padding:10px 5%;}
+  .share {position: absolute; top: 8px; right: 5%;}
+
+  .wrapper .rightSection .intro .header {font-size: 2.5em;}
+  .wrapper .rightSection .intro .text1 {font-size: 1.4em;}
+  .wrapper .rightSection .intro .steps ul li {font-size: 1.3em;}
+
+  .wrapper .leftSection {width: 65%; left: 35%;}
+
+  a.button, .submitButton {font-size: 1.2em; padding:8px 0; width: 130px;}
+
+  .wrapper .leftSection.mobileScreenLeft {width:30%; height:25%;}
+  .wrapper .leftSection.mobileScreenLeft2 {height:15%;}
+  .wrapper .rightSection.mobileScreenRight {height: 75%;}
+
+  .wrapper .rightSection.mobileScreenRight {padding: 10px 5% 0 5%;}
+  .wrapper .rightSection .form .header {font-size: 1.6em;}
+  .wrapper .rightSection .form .header br {display: none;}
+  .wrapper .rightSection .form .text1 {font-size: 1em; margin-bottom: 10px;}
+  .wrapper .rightSection .form .formWrapper ul li {margin-bottom: 10px;}
+  .wrapper .rightSection .form .formWrapper ul li .inputFields, .wrapper .rightSection .form .formWrapper ul li .seletMenu select, .wrapper .rightSection .form .formWrapper ul li .number {font-size: 1.2em;}
+
+  .wrapper .leftSection .keyLock, .wrapper .leftSection .keyUnLock {top:25px;}
+  .wrapper .leftSection .keyLock .box, .wrapper .leftSection .keyUnLock .box, .wrapper .leftSection .keyLock .box .key, .key .numberBox {height: 50px;}
+  .key .numberBox {border-width: 4px;}
+  .key .numberBox ul li {font-size: 1.6em; line-height: 2.5em;}
+  .wrapper .leftSection .keyLock .box .lock {transform: scale(0.5); -webkit-transform: scale(0.5); -moz-transform: scale(0.5); -o-transform: scale(0.5); left: 32%; top: -25px;}
+  .key .line {height: 4px; top: 24px; margin-left: -4px;}
+  .key .line .line1, .key .line .line2 {width: 6px; bottom: 2px;}
+  .key .line .line1 {height: 15px;}
+  .key .line .line2 {height: 25px;}
+
+
+
+
+}
+
+/*@media (max-width:800px) {
+  a.logo {left: 5%;}
+  .wrapper .leftSection {height: auto; position: absolute;  width: 100%; bottom: 0;}
+  .wrapper .leftSection .banner, .wrapper .leftSection .keyLock, .wrapper .leftSection .keyUnLock, .wrapper .rightSection .intro, .wrapper .rightSection .form, .wrapper .rightSection .thankYou {top: 0%; transform: translateY(0); -webkit-transform: translateY(0); -moz-transform: translateY(0); -o-transform: translateY(0);}
+
+  .wrapper .leftSection.mobileScreen {position: relative ;}
+  .wrapper .leftSection .mobileBanner {width: 50%; top: 30px; bottom: auto; position: relative; left: 25%;} 
+
+  .wrapper .leftSection .keyLock, .wrapper .leftSection .keyUnLock {position: fixed; top: 140px; width: 90%;}
+    .wrapper .leftSection .keyLock .box, .wrapper .leftSection .keyUnLock .box {border:none; height: 135px; float: left; width: 100%;}
+    .wrapper .leftSection .keyLock .box .key {height: 135px; float: left; margin: 0; width: 100%;}
+    .wrapper .leftSection .keyLock .box .lock {width: 60px; height: 60px; right: auto; left: 35%; top: -30px;}
+    .wrapper .leftSection .keyLock .box .lock:before {transform: scale(0.6); -webkit-transform: scale(0.6); -moz-transform: scale(0.6);
+    -o-transform: scale(0.6); top: 4px; left: 12px;}
+    .key .line {width: 165px; height: 18px;}
+    .key .numberBox {width: 40%; border-width: 10px; height: 120px;}
+    .key .numberBox ul li {font-size: 6em; line-height: 1.65em;}
+    .key .line {left: 40%; width: calc(100% - 40%); top: 52px; margin-left: -5px}
+    .key .line .line1, .key .line .line2 {width: 18px; top: auto; bottom:10px;}
+    .key .line .line1 {height: 35px; left: 77%;}
+    .key .line .line2 {height: 45px; left: 85%;}
+
+
+    .wrapper .rightSection {width: 100%;}
+  .wrapper .rightSection .intro, .wrapper .rightSection .form, .wrapper .rightSection .thankYou {padding-left: 0; width: 100%;}
+    .wrapper .rightSection {height: auto;}
+    .wrapper .rightSection .intro {margin-top:100px;}
+
+    .wrapper .rightSection .form {top: 40%;}
+    .wrapper .rightSection .form .text1, .wrapper .rightSection .form .formWrapper ul li {width: 100%;}
+    .wrapper .rightSection .form .formWrapper ul li .number {left: -28px;}
+    
+    .wrapper .rightSection .thankYou {top: 280px;}
+
+    .share {top: 30px; right: 5%; bottom: auto;}
+    .share ul li:last-child {display: block;}
+    .stepsIndication {top: auto; bottom: 15px; right: 5%; transform: translateY(0); -webkit-transform: translateY(0); -moz-transform: translateY(0); -o-transform: translateY(-50%); height: auto;}
+    .stepsIndication .line {width: 110px; height: 1px;}
+    .stepsIndication ul li {margin-top: -4px;}
+    .stepsIndication ul li.active {width: 20px; height: 20px; transform: translate(-5px, -5px); -webkit-transform: translate(-5px, -5px);
+    -moz-transform: translate(-5px, -5px); -o-transform: translate(-5px, -5px);}
+    .stepsIndication ul li span {font-size: 1em; padding-top: 4px}
+    .stepsIndication ul li:nth-child(2) {top: 0; left: 50%;}
+    .stepsIndication ul li:nth-child(3) {top: 0; left: 100%;}
+
+    .address {left: 5%; width: 90%;}
+    .address ul li {margin: 0 0 5px 0;}
+    .address ul li:after {display: none;}
+
+    .backgrounds .form {width: 100%; height: 65%; top: auto; bottom: 0;}   
+
+}
+
+@media (max-width:650px) {
+  .midWrapper {width: 85%;}
+  .wrapper .leftSection {bottom: 30px;}
+  .wrapper .leftSection .mobileBanner {width: 60%; left: 20%; top: 50px;}
+  .key .numberBox ul li {font-size: 4em; line-height: 2.5em;}
+}
+
+
+
+@media (max-width:500px) {
+  a.logo {transform: scale(0.8); -webkit-transform: scale(0.8); -moz-transform: scale(0.8); -o-transform: scale(0.8); transform-origin: left top; top: 10px;}
+  .wrapper .rightSection .intro .header, .wrapper .rightSection .thankYou .header {font-size: 4em;}
+
+  .wrapper .rightSection .intro {margin-top: 70px;}
+  .wrapper .rightSection .intro .header {margin-bottom: 20px;}
+  .wrapper .rightSection .intro .header span:before {transform: scale(0.4); -webkit-transform: scale(0.4); -moz-transform: scale(0.4); -o-transform: scale(0.4); top: 16px; left: 6px; transform-origin: center top;}
+  .wrapper .rightSection .intro .text1 {font-size: 1.8em; margin-bottom:20px;}
+  .wrapper .rightSection .intro .steps {margin-bottom: 30px;}
+  .wrapper .rightSection .intro .steps ul li {font-size: 1.6em; margin-bottom: 16px; padding-left: 35px;}
+  .wrapper .rightSection .intro .steps ul li:before, .wrapper .rightSection .intro .steps ul li span {width: 22px; height: 22px;}
+  .wrapper .rightSection .intro .steps ul li span {padding-top: 1px;}
+  .wrapper .rightSection .intro .steps ul li:after {top: 11px; left: 11px;}
+  a.button, .submitButton {font-size: 1.4em; padding: 13px 0; letter-spacing:2px; width:170px;} 
+
+  .wrapper .leftSection .mobileBanner {top:10px}
+
+  .wrapper .leftSection .banner {top: 10px; right: -30px;}
+
+  .backgrounds .form {height: 72%;}
+
+  .wrapper .rightSection .form {top: 32%;}
+  .wrapper .rightSection .form .header {font-size: 2em; margin-bottom:10px;}
+  .wrapper .rightSection .form .text1 {font-size: 1.4em; margin-bottom: 20px;}
+
+  .wrapper .rightSection .form .formWrapper ul li {margin-bottom: 20px;}
+  .wrapper .rightSection .form .formWrapper ul li .inputFields, .wrapper .rightSection .form .formWrapper ul li .seletMenu select, .wrapper .rightSection .form .formWrapper ul li .number {font-size: 1.4em;}
+  .wrapper .rightSection .form .formWrapper ul li .number {left: -23px;}
+
+  .wrapper .leftSection .keyLock, .wrapper .leftSection .keyUnLock {top: 80px;}
+  .wrapper .leftSection .keyLock .box, .wrapper .leftSection .keyUnLock .box, .wrapper .leftSection .keyLock .box .key, .key .numberBox {height: 95px;}
+  .key .numberBox ul li {font-size: 3em;}
+  .key .line {height: 15px;}
+  .key .line {top: 42px;}
+  .key .line .line1, .key .line .line2 {width: 15px;}
+  .key .line .line1 {left: 70%; height: 25px;}
+  .key .line .line2 {left: 80%; height: 35px;}
+  
+  .wrapper .leftSection .keyLock .box .lock {height: 45px; width: 45px;}
+  .wrapper .leftSection .keyLock .box .lock:before {transform: scale(0.4); -webkit-transform: scale(0.4); -moz-transform: scale(0.4); -o-transform: scale(0.4); top: -3px; left: 5px;}
+
+  .wrapper .rightSection .thankYou {top: 200px;}
+  .wrapper .rightSection .thankYou .header {margin-bottom: 0;}
+  .wrapper .rightSection .thankYou .header br {display: none;}
+  .wrapper .rightSection .thankYou .text1 {width: 100%; font-size: 1.4em;}
+  .address ul li {font-size: 1.3em; padding: 10px 0 5px 25px; margin: 0;}
+  .address ul li.location:before, .address ul li.phone:before {transform: scale(0.8); -webkit-transform: scale(0.8); -moz-transform: scale(0.8); -o-transform: scale(0.8);}
+
+  .share {top: 15px;}
+
+}
+
+
+@media (max-width:400px) {
+  a.logo {transform: scale(0.7); -webkit-transform: scale(0.7); -moz-transform: scale(0.7); -o-transform: scale(0.7); top: 10px;}
+  .share ul li {margin: 0 5px;}
+
+  .key .numberBox ul li:before {height: 60%; top: 20%;}
+}
+
+
+@media (max-width:350px) {
+  .wrapper .leftSection {bottom: 0;}
+
+  .wrapper .rightSection .intro {margin-top: 50px;}
+  .wrapper .rightSection .intro .header {font-size: 3em; margin-bottom: 10px;}
+  .wrapper .rightSection .intro .header span:before {transform: scale(0.3); -webkit-transform: scale(0.3); -moz-transform: scale(0.3); -o-transform: scale(0.3); top: 9px; left: 3px;}
+  .wrapper .rightSection .intro .text1, .wrapper .rightSection .intro .steps ul li {font-size: 1.4em;}
+  .wrapper .rightSection .intro .steps {margin-bottom: 20px;}
+  .wrapper .rightSection .intro .steps ul li {margin-bottom: 10px;}
+  .wrapper .rightSection .intro .steps ul li span {padding-top: 2px;}
+
+  .wrapper .leftSection .mobileBanner {width: 50%; left: 25%;}
+
+  .wrapper .rightSection .form .header {font-size: 1.6em;}
+  .wrapper .rightSection .form .text1 {font-size: 1.2em; margin-bottom: 10px;}
+  .wrapper .rightSection .form .formWrapper ul li .inputFields, .wrapper .rightSection .form .formWrapper ul li .seletMenu select, .wrapper .rightSection .form .formWrapper ul li .number {font-size: 1.2em; padding: 0px 0 5px 0;}
+  .wrapper .rightSection .form .formWrapper ul li .seletMenu:before {width: 6px; height: 6px; top: 4px;}
+  .wrapper .rightSection .form .formWrapper ul li {margin-bottom: 5px;}
+  .wrapper .rightSection .form .formWrapper ul li .correct, .wrapper .rightSection .form .formWrapper ul li .wrong {border-bottom-width: 2px !important;}
+  a.button, .submitButton {font-size: 1.2em; padding: 10px 0; letter-spacing: 1px; border: 1px solid #373737; width: 130px;}
+
+  .wrapper .leftSection .keyLock, .wrapper .leftSection .keyUnLock {top: 50px;}
+  .wrapper .leftSection .keyLock .box, .wrapper .leftSection .keyUnLock .box, .wrapper .leftSection .keyLock .box .key, .key .numberBox {height: 70px;}
+  .key .numberBox {border-width: 6px;}
+  .key .numberBox ul li {font-size: 2em; line-height: 3em;}
+  .wrapper .leftSection .keyLock .box .lock {transform: scale(0.7); -webkit-transform: scale(0.7); -moz-transform: scale(0.7); -o-transform: scale(0.7); left: 30%; top: -20px;}
+
+  .key .line {height: 10px; top: 30px;}
+  .key .line .line1, .key .line .line2 {width: 10px; bottom: 2px;}
+  .key .line .line1 {height: 20px;}
+  .key .line .line2 {height: 30px;}
+  .wrapper .rightSection .thankYou {top: 140px;}
+
+  .wrapper .rightSection .thankYou .header {font-size: 3em;}
+  .wrapper .rightSection .thankYou .text1 {font-size: 1.2em;}
+  .wrapper .rightSection .thankYou .text1 p {margin: 5px 0;}
+  .address ul li {font-size: 1.1em;}
+}*/
